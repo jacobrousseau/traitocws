@@ -39,7 +39,7 @@ import org.xml.sax.SAXException;
 
 /**
  * Class for automated data uploads. To be used by Mirth.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ImportODM extends Main {
 

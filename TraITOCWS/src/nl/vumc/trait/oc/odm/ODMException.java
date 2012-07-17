@@ -20,7 +20,7 @@ package nl.vumc.trait.oc.odm;
 
 /**
  * General ODM exception for ODM related exceptions.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ODMException extends Exception {
 

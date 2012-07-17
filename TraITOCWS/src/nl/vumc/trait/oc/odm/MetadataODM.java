@@ -36,7 +36,7 @@ import org.xml.sax.SAXException;
 /**
  * ODM Metadata
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  * 
  */
 public class MetadataODM extends AbstractODM {

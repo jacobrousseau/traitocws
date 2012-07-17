@@ -37,7 +37,7 @@ import org.xml.sax.SAXException;
 /**
  * Extract ODM for a given study (either metadata or metadata translated
  * to a template)
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ExtractODM extends Main {
 

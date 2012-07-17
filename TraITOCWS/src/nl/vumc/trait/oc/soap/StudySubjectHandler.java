@@ -36,7 +36,7 @@ import org.w3c.dom.NodeList;
 /**
  * This handler restructures the buggy isSubjectResponse from OC 3.1.2. See
  * issue report 13411 (https://issuetracker.openclinica.com/view.php?id=13411).
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class StudySubjectHandler implements SOAPHandler<SOAPMessageContext> {
 

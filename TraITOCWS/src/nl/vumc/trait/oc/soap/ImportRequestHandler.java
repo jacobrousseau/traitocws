@@ -55,7 +55,7 @@ import org.xml.sax.SAXException;
  * definition of the contents of the importRequest. This handler handles
  * outgoing messages having a importRequest tag. In the process of transforming
  * ODM to XML it will also cleansed so as to filter out missing template values.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ImportRequestHandler implements SOAPHandler<SOAPMessageContext> {
 
