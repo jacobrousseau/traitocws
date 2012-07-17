@@ -1,0 +1,5 @@
+CTMM TraIT OpenClinica-Mirth Interface
+Copyright 2001-2012 CTMM TraIT
+
+This product includes software developed by
+The Apache Software Foundation (http://www.apache.org/).

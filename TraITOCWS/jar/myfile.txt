@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODM xmlns:Mirth="http://www.vumc.nl/trait/odm/mirth/v0.1" xmlns:OpenClinica="http://www.openclinica.org/ns/odm_ext_v130/v3.1" xmlns:cdisc="http://www.cdisc.org/ns/odm/v1.3">
+  <ClinicalData Mirth:TranslateOID="false" StudyOID="S_TEST001">
+    <SubjectData Mirth:TranslateOID="true" SubjectKey="D_TEST001KG_CRC_IIandIII_004">
+      <StudyEventData StudyEventOID="SE_WEFAWASDF">
+        <FormData FormOID="F_URL_CRF2_100">
+          <ItemGroupData ItemGroupOID="IG_URL_C_UNGROUPED_8224" TransactionType="Insert">
+            <ItemData ItemOID="I_URL_C_URLFIELD_4165" Mirth:Comment="Enter a URL here" Mirth:DataType="text" Mirth:ResponseType="text" Value="http://www.vumc.nl/"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+</ODM>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODM xmlns:Mirth="http://www.vumc.nl/trait/odm/mirth/v0.1" xmlns:OpenClinica="http://www.openclinica.org/ns/odm_ext_v130/v3.1" xmlns:cdisc="http://www.cdisc.org/ns/odm/v1.3">
+  <ClinicalData Mirth:TranslateOID="false" StudyOID="S_STUDIE00">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:DateOfBirth="1930-01-01" OpenClinica:Sex="m" SubjectKey="Studie001Subject1" OpenClinica:DateOfRegistration="2012-01-01">
+      <StudyEventData OpenClinica:StartDate="2012-01-10" StudyEventOID="SE_EVENTBLA">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="File met File box" Mirth:DataType="text" Mirth:ResponseType="file" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC2" Mirth:Comment="File met text" Mirth:DataType="text" Mirth:ResponseType="text" Value="mijn waarde 2"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_100">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+</ODM>
+
