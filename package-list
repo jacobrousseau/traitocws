@@ -1,0 +1,15 @@
+nl.vumc.trait.oc.connect
+nl.vumc.trait.oc.main
+nl.vumc.trait.oc.mirth
+nl.vumc.trait.oc.odm
+nl.vumc.trait.oc.soap
+nl.vumc.trait.oc.transformations
+nl.vumc.trait.oc.types
+nl.vumc.trait.oc.util
+nl.vumc.trait.oc.ws
+org.openclinica.ws.beans
+org.openclinica.ws.data.v1
+org.openclinica.ws.event.v1
+org.openclinica.ws.study.v1
+org.openclinica.ws.studyeventdefinition.v1
+org.openclinica.ws.studysubject.v1
