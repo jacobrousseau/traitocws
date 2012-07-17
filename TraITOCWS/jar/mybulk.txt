@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODM xmlns:Mirth="http://www.vumc.nl/trait/odm/mirth/v0.1" xmlns:OpenClinica="http://www.openclinica.org/ns/odm_ext_v130/v3.1" xmlns:cdisc="http://www.cdisc.org/ns/odm/v1.3">
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 1"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="2">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 2"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="3">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 3"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="4">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 4"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="5">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 5"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="6">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 6"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="7">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 7"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="8">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 8"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="9">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 9"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+  <ClinicalData Mirth:TranslateOID="true" StudyOID="Studie 001">
+    <SubjectData Mirth:TranslateOID="true" OpenClinica:UniqueIdentifier="New Person 001" OpenClinica:DateOfBirth="1920-01-02" OpenClinica:DateOfRegistration="1989-02-03" OpenClinica:Sex="m" SubjectKey="Candidate A01" Mirth:Create="True">
+      <StudyEventData OpenClinica:StartDate="2012-01-01" StudyEventOID="SE_SCREENING" Mirth:Create="True">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="Date Metastatic Disease" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_CLINICALCONN_V1">
+          <ItemGroupData ItemGroupOID="IG_CLINI_REPEATINGLABDATA" TransactionType="Insert" ItemGroupRepeatKey="10">
+            <ItemData ItemOID="I_CLINI_COIND" Mirth:Comment="Collected Indicator" Mirth:DataType="text" Mirth:ResponseType="text" Value="nr 10"/>
+            <ItemData ItemOID="I_CLINI_COMMENT" Mirth:Comment="Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="hallo"/>
+            <ItemData ItemOID="I_CLINI_CONFCODE" Mirth:Comment="Confidentiality Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="waarde 50"/>
+            <ItemData ItemOID="I_CLINI_NUMRES" Mirth:Comment="Numerical Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="leuk ja"/>
+            <ItemData ItemOID="I_CLINI_NUMRESMEASUNIT" Mirth:Comment="Numerical Result Measurement Unit" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGELOW" Mirth:Comment="Reference Range Low" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGEHIGH" Mirth:Comment="Reference Range High" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REFRANGECOM" Mirth:Comment="Reference Range Comment" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPDATE" Mirth:Comment="Reported Date" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_REPRESSTATCODE" Mirth:Comment="Reported Result Status Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_TEXTRES" Mirth:Comment="Text Result" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_UNCERTCODE" Mirth:Comment="Uncertainty Code" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_CLINI_PEROBSACTNAMECODE" Mirth:Comment="Performed" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_NBIA_URL_TES_101">
+          <ItemGroupData ItemGroupOID="IG_NBIA__UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_NBIA__NBIA_SUBJECT" Mirth:Comment="Enter NBIA Subject" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_NBIA__NBIA_URL" Mirth:Comment="NBIA" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+</ODM>
+

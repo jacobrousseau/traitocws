@@ -1,0 +1,21 @@
+--- dataWsdl.wsdl	2012-07-11 12:26:26.000000000 +0200
++++ dataWsdl.wsdl	2012-06-05 08:20:23.000000000 +0200
+@@ -37,6 +37,11 @@
+   </wsdl:message>
+   <wsdl:portType name="ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+     <wsdl:operation name="import" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
++    
++      <jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
++         <jaxws:method name="dataImport"><jaxws:javadoc>import odm data</jaxws:javadoc></jaxws:method>
++      </jaxws:bindings>
++      
+       <wsdl:input message="tns:importRequest" name="importRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+     </wsdl:input>
+       <wsdl:output message="tns:importResponse" name="importResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+@@ -60,4 +65,4 @@
+       <soap:address location="https://appserv2.ctms:443/OpenClinica-ws/ws/data/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+     </wsdl:port>
+   </wsdl:service>
+-</wsdl:definitions>
+\ No newline at end of file
++</wsdl:definitions>

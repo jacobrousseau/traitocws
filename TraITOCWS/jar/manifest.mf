@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: commons-cli-1.2.jar log4j-1.2.17.jar

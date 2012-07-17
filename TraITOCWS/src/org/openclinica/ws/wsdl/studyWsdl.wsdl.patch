@@ -1,0 +1,11 @@
+--- studyWsdl.wsdl	2012-06-05 08:20:23.000000000 +0200
++++ studyWsdl.wsdl	2012-06-05 08:20:23.000000000 +0200
+@@ -33,6 +33,8 @@
+                 <element name="result" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+                 <element maxOccurs="unbounded" minOccurs="0" name="warning" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+                 <element maxOccurs="unbounded" minOccurs="0" name="error" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
++                <!-- Added: see issue report https://issuetracker.openclinica.com/view.php?id=13417 -->
++                <element maxOccurs="1" minOccurs="0" name="odm" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+             </sequence>
+         </complexType>
+     </element>

@@ -1,0 +1,1725 @@
+<channel>
+  <id>47390d9a-631e-4c58-b841-d186ac5fbb5c</id>
+  <name>Cairo File Reader</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>2.1.1.5490</version>
+  <lastModified>
+    <time>1342099202461</time>
+    <timezone>Europe/Amsterdam</timezone>
+  </lastModified>
+  <revision>49</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">File Reader</property>
+      <property name="FTPAnonymous">1</property>
+      <property name="autoDelete">0</property>
+      <property name="binary">0</property>
+      <property name="charsetEncoding">DEFAULT_ENCODING</property>
+      <property name="checkFileAge">1</property>
+      <property name="fileAge">1000</property>
+      <property name="fileFilter">*.csv</property>
+      <property name="host">/home/mirth/data/upload/</property>
+      <property name="moveToDirectory">/home/mirth/data/done/</property>
+      <property name="moveToErrorDirectory">/home/mirth/data/error/</property>
+      <property name="moveToPattern"></property>
+      <property name="passive">1</property>
+      <property name="password">anonymous</property>
+      <property name="pollingFrequency">1000</property>
+      <property name="pollingType">interval</property>
+      <property name="processBatchFiles">1</property>
+      <property name="regex">0</property>
+      <property name="scheme">file</property>
+      <property name="secure">1</property>
+      <property name="sortAttribute">date</property>
+      <property name="timeout">10000</property>
+      <property name="username">anonymous</property>
+      <property name="validateConnections">1</property>
+    </properties>
+    <transformer>
+      <steps>
+        <step>
+          <sequenceNumber>0</sequenceNumber>
+          <name>Define Namespaces</name>
+          <script>// Define namespaces
+var Mirth = new Namespace(&apos;http://www.vumc.nl/trait/odm/mirth/v0.1&apos;);
+var OpenClinica = new Namespace(&apos;http://www.openclinica.org/ns/odm_ext_v130/v3.1&apos;);
+var cdisc = new Namespace(&apos;http://www.cdisc.org/ns/odm/v1.3&quot;&apos;);</script>
+          <type>JavaScript</type>
+          <data class="map">
+            <entry>
+              <string>Script</string>
+              <string>// Define namespaces
+var Mirth = new Namespace(&apos;http://www.vumc.nl/trait/odm/mirth/v0.1&apos;);
+var OpenClinica = new Namespace(&apos;http://www.openclinica.org/ns/odm_ext_v130/v3.1&apos;);
+var cdisc = new Namespace(&apos;http://www.cdisc.org/ns/odm/v1.3&quot;&apos;);</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>1</sequenceNumber>
+          <name>ClinicalData - @Mirth:TranslateOID (out)</name>
+          <script>tmp[&apos;ClinicalData&apos;].@Mirth::[&apos;TranslateOID&apos;] = validate(&apos;false&apos;, &apos;false&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;].@Mirth::[&apos;TranslateOID&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>&apos;false&apos;</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>&apos;false&apos;</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>2</sequenceNumber>
+          <name>ClinicalData - SubjectData - @Mirth:Create (out)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@Mirth::[&apos;Create&apos;] = validate(&apos;true&apos;, &apos;true&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@Mirth::[&apos;Create&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>3</sequenceNumber>
+          <name>ClinicalData - SubjectData - @Mirth:TranslateOID (out)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@Mirth::[&apos;TranslateOID&apos;] = validate(&apos;true&apos;, &apos;true&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@Mirth::[&apos;TranslateOID&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>4</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData [0] - @Mirth:Create (out)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][0].@Mirth::[&apos;Create&apos;] = validate(&apos;true&apos;, &apos;true&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][0].@Mirth::[&apos;Create&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>&apos;true&apos;</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>5</sequenceNumber>
+          <name>ClinicalData - SubjectData - @SubjectKey (out) &lt;-- row - StudyNumber (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;@SubjectKey&apos;] = validate(msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString().replace(/\s+$/g,&quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;@SubjectKey&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString().replace(/\s+$/g,&quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>6</sequenceNumber>
+          <name>ClinicalData - SubjectData - @OpenClinica:UniqueIdentifier (out) &lt;-- row - StudyNumber (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;UniqueIdentifier&apos;] = validate(msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString().replace(/\s+$/g,&quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;UniqueIdentifier&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString().replace(/\s+$/g,&quot;&quot;)</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>7</sequenceNumber>
+          <name>ClinicalData - SubjectData - @OpenClinica:DateOfBirth (out) &lt;-- row - DateOfBirth (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;DateOfBirth&apos;] = validate(( msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()) : &quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;DateOfBirth&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>( msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()) : &quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>8</sequenceNumber>
+          <name>ClinicalData - SubjectData - @OpenClinica:Sex (out) &lt;-- row - Gender (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;Sex&apos;] = validate(msg[&apos;row&apos;][&apos;Gender&apos;].toString().replace(&quot;1&quot;, &quot;m&quot;).replace(&quot;2&quot;, &quot;f&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;].@OpenClinica::[&apos;Sex&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Gender&apos;].toString().replace(&quot;1&quot;, &quot;m&quot;).replace(&quot;2&quot;, &quot;f&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>9</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [0] - @Value (out) &lt;-- row - StudyNumber (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][0][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][0][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;StudyNumber&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>10</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [1] - @Value (out) &lt;-- row - Tnumber (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][1][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Tnumber&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][1][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Tnumber&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>11</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [2] - @Value (out) &lt;-- row - Gender (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][2][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Gender&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][2][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Gender&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>12</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [3] - @Value (out) &lt;-- row - DateOfBirth (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][3][&apos;@Value&apos;] = validate(( msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()) : &quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][3][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>( msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfBirth&apos;].toString()) : &quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>13</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [4] - @Value (out) &lt;-- row - ReferringHospital (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][4][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;ReferringHospital&apos;].toString().replace(/\s+$/g,&quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][4][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;ReferringHospital&apos;].toString().replace(/\s+$/g,&quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>14</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [5] - @Value (out) &lt;-- row - Remarks1 (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][5][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Remarks1&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][5][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Remarks1&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>15</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [6] - @Value (out) &lt;-- row - DateOfSurgery (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][6][&apos;@Value&apos;] = validate(( msg[&apos;row&apos;][&apos;DateOfSurgery&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfSurgery&apos;].toString()) : &quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][6][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>( msg[&apos;row&apos;][&apos;DateOfSurgery&apos;].toString()!=&quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfSurgery&apos;].toString()) : &quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>16</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [7] - @Value (out) &lt;-- row - AgeAtSurgery (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][7][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;AgeAtSurgery&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][7][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;AgeAtSurgery&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>17</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [8] - @Value (out) &lt;-- row - SurgeryPlan (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][8][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;SurgeryPlan&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][8][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;SurgeryPlan&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>18</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [9] - @Value (out) &lt;-- row - IndicationAcute (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][9][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;IndicationAcute&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][9][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;IndicationAcute&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>19</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [10] - @Value (out) &lt;-- row - Resection (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][10][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Resection&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][10][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Resection&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>20</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [11] - @Value (out) &lt;-- row - Perforation (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][11][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Perforation&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][11][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Perforation&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>21</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [12] - @Value (out) &lt;-- row - DateOfPerforation (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][12][&apos;@Value&apos;] = validate((msg[&apos;row&apos;][&apos;DateOfPerforation&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfPerforation&apos;].toString()) : &quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][12][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>(msg[&apos;row&apos;][&apos;DateOfPerforation&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfPerforation&apos;].toString()) : &quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>22</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [13] - @Value (out) &lt;-- row - DetectionOfPerforation (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][13][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;DetectionOfPerforation&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][13][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;DetectionOfPerforation&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>23</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [14] - @Value (out) &lt;-- row - ExplanationOfPerforation (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][14][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;ExplanationOfPerforation&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][14][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;ExplanationOfPerforation&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>24</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [15] - @Value (out) &lt;-- row - TumourSpill (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][15][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;TumourSpill&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][15][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;TumourSpill&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>25</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [16] - @Value (out) &lt;-- row - LocationTumour (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][16][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;LocationTumour&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][16][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;LocationTumour&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>26</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [17] - @Value (out) &lt;-- row - TumourSize (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][17][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;TumourSize&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][17][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;TumourSize&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>27</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [18] - @Value (out) &lt;-- row - TStage (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][18][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;TStage&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][18][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;TStage&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>28</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [19] - @Value (out) &lt;-- row - NStage (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][19][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;NStage&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][19][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;NStage&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>29</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [20] - @Value (out) &lt;-- row - MStage (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][20][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;MStage&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][20][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;MStage&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>30</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [21] - @Value (out) &lt;-- row - Stage (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][21][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Stage&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][21][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Stage&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>31</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [22] - @Value (out) &lt;-- row - NumberLymphNodesRemoved (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][22][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;NumberLymphNodesRemoved&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][22][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;NumberLymphNodesRemoved&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>32</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [23] - @Value (out) &lt;-- row - NodePositive (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][23][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;NodePositive&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][23][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;NodePositive&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>33</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [24] - @Value (out) &lt;-- row - NumberLymphNodesPositive (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][24][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;NumberLymphNodesPositive&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][24][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;NumberLymphNodesPositive&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>34</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [25] - @Value (out) &lt;-- row - IsolatedTumourDeposit (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][25][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;IsolatedTumourDeposit&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][25][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;IsolatedTumourDeposit&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>35</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [26] - @Value (out) &lt;-- row - Mucinous (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][26][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Mucinous&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][26][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Mucinous&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>36</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [27] - @Value (out) &lt;-- row - DifferentiationGrade (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][27][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;DifferentiationGrade&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][27][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;DifferentiationGrade&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>37</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [28] - @Value (out) &lt;-- row - Ulceration (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][28][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Ulceration&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][28][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Ulceration&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>38</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [29] - @Value (out) &lt;-- row - AngioInvasion (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][29][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;AngioInvasion&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][29][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;AngioInvasion&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>39</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [30] - @Value (out) &lt;-- row - Metastasis (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][30][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Metastasis&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][30][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Metastasis&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>40</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [31] - @Value (out) &lt;-- row - MetastasisOrgan (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][31][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;MetastasisOrgan&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][31][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;MetastasisOrgan&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>41</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [32] - @Value (out) &lt;-- row - AdjuventTherapy (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][32][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;AdjuventTherapy&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][32][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;AdjuventTherapy&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>42</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [33] - @Value (out) &lt;-- row - ChemoDifferent (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][33][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;ChemoDifferent&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][33][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;ChemoDifferent&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>43</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [34] - @Value (out) &lt;-- row - RadioTherapy (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][34][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;RadioTherapy&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][34][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;RadioTherapy&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>44</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [35] - @Value (out) &lt;-- row - RadioTherapyDose (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][35][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;RadioTherapyDose&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][35][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;RadioTherapyDose&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>45</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [36] - @Value (out) &lt;-- row - ReasonNoAdjuventTherapy (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][36][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;ReasonNoAdjuventTherapy&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][36][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;ReasonNoAdjuventTherapy&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>46</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [37] - @Value (out) &lt;-- row - Relapse (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][37][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Relapse&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][37][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Relapse&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>47</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [38] - @Value (out) &lt;-- row - DateOfRelapse (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][38][&apos;@Value&apos;] = validate(( msg[&apos;row&apos;][&apos;DateOfRelapse&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfRelapse&apos;].toString()) : &quot;&quot;), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][38][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>( msg[&apos;row&apos;][&apos;DateOfRelapse&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;DateOfRelapse&apos;].toString()) : &quot;&quot;)</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>48</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [39] - @Value (out) &lt;-- row - LocalRelapse (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][39][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;LocalRelapse&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][39][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;LocalRelapse&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>49</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [40] - @Value (out) &lt;-- row - DistantRelapse (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][40][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;DistantRelapse&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][40][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;DistantRelapse&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>50</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [41] - @Value (out) &lt;-- row - DistantRelapseOrgan (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][41][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;DistantRelapseOrgan&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][41][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;DistantRelapseOrgan&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>51</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [42] - @Value (out) &lt;-- row - TherapyForRelapse (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][42][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;TherapyForRelapse&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][42][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;TherapyForRelapse&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>52</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [43] - @Value (out) &lt;-- row - Remarks2 (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][43][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Remarks2&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][43][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Remarks2&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>53</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [44] - @Value (out) &lt;-- row - LastDateOfContact (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][44][&apos;@Value&apos;] = validate(( msg[&apos;row&apos;][&apos;LastDateOfContact&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;LastDateOfContact&apos;].toString()) : &quot;&quot; ), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][44][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>( msg[&apos;row&apos;][&apos;LastDateOfContact&apos;].toString() != &quot;&quot; ? DateUtil.convertDate(&apos;dd-MMM-yyyy&apos;, &apos;yyyy-MM-dd&apos;, msg[&apos;row&apos;][&apos;LastDateOfContact&apos;].toString()) : &quot;&quot; )</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>54</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [45] - @Value (out) &lt;-- row - FollowUp (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][45][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;FollowUp&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][45][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;FollowUp&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>55</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [46] - @Value (out) &lt;-- row - DiseaseFreeFollowUp (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][46][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;DiseaseFreeFollowUp&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][46][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;DiseaseFreeFollowUp&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>56</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [47] - @Value (out) &lt;-- row - Deceased (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][47][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Deceased&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][47][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Deceased&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>57</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [48] - @Value (out) &lt;-- row - Status (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][48][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Status&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][48][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Status&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>58</sequenceNumber>
+          <name>ClinicalData - SubjectData - StudyEventData - FormData - ItemGroupData - ItemData [49] - @Value (out) &lt;-- row - Remarks3 (in)</name>
+          <script>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][49][&apos;@Value&apos;] = validate(msg[&apos;row&apos;][&apos;Remarks3&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;ClinicalData&apos;][&apos;SubjectData&apos;][&apos;StudyEventData&apos;][&apos;FormData&apos;][&apos;ItemGroupData&apos;][&apos;ItemData&apos;][49][&apos;@Value&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;row&apos;][&apos;Remarks3&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+      </steps>
+      <inboundTemplate encoding="base64">S0dfQ1JDX0lJYW5kSUlJXzAwMSAsMDAtMDE0NTgsMSwxOTQyLTEyLTI1LEtlbm5lbWVyIEdhc3Ro
+dWlzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLCwwMS1KYW4tMjAwMCw1
+Ny4wMiwyLDIsNSwyLCwsLDAsNyw0NSw0LDAsMCwyLDMsMCwsMCwwLDMsMSwwLDAsLDIsLDAsLCww
+LCwsLCwsLDI2LUp1bi0yMDA4LDEwMS44MiwxMDEuODIsMCwxLCw=</inboundTemplate>
+      <outboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxP
+RE0geG1sbnM6TWlydGg9Imh0dHA6Ly93d3cudnVtYy5ubC90cmFpdC9vZG0vbWlydGgvdjAuMSIg
+eG1sbnM6T3BlbkNsaW5pY2E9Imh0dHA6Ly93d3cub3BlbmNsaW5pY2Eub3JnL25zL29kbV9leHRf
+djEzMC92My4xIiB4bWxuczpjZGlzYz0iaHR0cDovL3d3dy5jZGlzYy5vcmcvbnMvb2RtL3YxLjMi
+PgogIDxDbGluaWNhbERhdGEgTWlydGg6VHJhbnNsYXRlT0lEPSJmYWxzZSIgU3R1ZHlPSUQ9IlNf
+REVNTzAwMUEiPgogICAgPFN1YmplY3REYXRhIE1pcnRoOkNyZWF0ZT0iZmFsc2UiIE1pcnRoOlRy
+YW5zbGF0ZU9JRD0idHJ1ZSIgT3BlbkNsaW5pY2E6RGF0ZU9mQmlydGg9IiZsdDtWQUxVRSZndDsi
+IE9wZW5DbGluaWNhOkRhdGVPZlJlZ2lzdHJhdGlvbj0iJmx0O1ZBTFVFJmd0OyIgT3BlbkNsaW5p
+Y2E6U2V4PSImbHQ7VkFMVUUmZ3Q7IiBPcGVuQ2xpbmljYTpVbmlxdWVJZGVudGlmaWVyPSImbHQ7
+VkFMVUUmZ3Q7IiBTdWJqZWN0S2V5PSImbHQ7U1VCSkVDVCBJRCZndDsiPgogICAgICA8U3R1ZHlF
+dmVudERhdGEgT3BlbkNsaW5pY2E6U3RhcnREYXRlPSImbHQ7VkFMVUUmZ3Q7IiBTdHVkeUV2ZW50
+T0lEPSJTRV9NSVJUSFVQTE9BRCIgU3R1ZHlFdmVudFJlcGVhdEtleT0iJmx0O1ZBTFVFJmd0OyI+
+CiAgICAgICAgPEZvcm1EYXRhIEZvcm1PSUQ9IkZfS0dfQ1JDX0lJQU5EX1YxIj4KICAgICAgICAg
+IDxJdGVtR3JvdXBEYXRhIEl0ZW1Hcm91cE9JRD0iSUdfS0dfQ1JfVU5HUk9VUEVEIiBJdGVtR3Jv
+dXBSZXBlYXRLZXk9IiZsdDtWQUxVRSZndDsiIFRyYW5zYWN0aW9uVHlwZT0iSW5zZXJ0Ij4KICAg
+ICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfU1RVRFlOVU1CRVIiIE1pcnRoOkNv
+bW1lbnQ9IlN0dWR5IG51bWJlciIgTWlydGg6RGF0YVR5cGU9InRleHQiIE1pcnRoOlJlc3BvbnNl
+VHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRl
+bU9JRD0iSV9LR19DUl9UTlVNQkVSIiBNaXJ0aDpDb21tZW50PSJULW51bWJlciIgTWlydGg6RGF0
+YVR5cGU9InRleHQiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIv
+PgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9HRU5ERVIiIE1pcnRoOkNv
+bW1lbnQ9IkdlbmRlciIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlw
+ZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9J
+RD0iSV9LR19DUl9EQVRFT0ZCSVJUSCIgTWlydGg6Q29tbWVudD0iRGF0ZSBvZiBiaXJ0aCIgTWly
+dGg6RGF0YVR5cGU9ImRhdGUiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVF
+Jmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9SRUZFUlJJTkdI
+T1NQSVRBTCIgTWlydGg6Q29tbWVudD0iUmVmZXJyaW5nIGhvc3BpdGFsIiBNaXJ0aDpEYXRhVHlw
+ZT0idGV4dCIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAg
+ICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX1JFTUFSS1MxIiBNaXJ0aDpDb21t
+ZW50PSJSZW1hcmtzIiBNaXJ0aDpEYXRhVHlwZT0idGV4dCIgTWlydGg6UmVzcG9uc2VUeXBlPSIi
+IFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJ
+X0tHX0NSX0RBVEVPRlNVUkdFUlkiIE1pcnRoOkNvbW1lbnQ9IkRhdGUgb2Ygc3VyZ2VyeSIgTWly
+dGg6RGF0YVR5cGU9ImRhdGUiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVF
+Jmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9BR0VBVFNVUkdF
+UlkiIE1pcnRoOkNvbW1lbnQ9IkFnZSBhdCBkYXRlIG9mIGZpcnN0IHN1cmdlcnkiIE1pcnRoOkRh
+dGFUeXBlPSJ0ZXh0IiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsi
+Lz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfU1VSR0VSWVBMQU4iIE1p
+cnRoOkNvbW1lbnQ9IlN1cmdlcnkgcGxhbiIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRo
+OlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRl
+bURhdGEgSXRlbU9JRD0iSV9LR19DUl9JTkRJQ0FUSU9OQUNVVEUiIE1pcnRoOkNvbW1lbnQ9Iklu
+ZGljYXRpb24gYWN1dGUiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5
+cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1P
+SUQ9IklfS0dfQ1JfUkVTRUNUSU9OIiBNaXJ0aDpDb21tZW50PSJSZXNlY3Rpb24iIE1pcnRoOkRh
+dGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZn
+dDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfUEVSRk9SQVRJT04i
+IE1pcnRoOkNvbW1lbnQ9IlBlcmZvcmF0aW9uIiBNaXJ0aDpEYXRhVHlwZT0iaW50ZWdlciIgTWly
+dGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJ
+dGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX0RBVEVPRlBFUkZPUkFUSU9OIiBNaXJ0aDpDb21tZW50
+PSJEYXRlIG9mIHBlcmZvcmF0aW9uIiBNaXJ0aDpEYXRhVHlwZT0iZGF0ZSIgTWlydGg6UmVzcG9u
+c2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJ
+dGVtT0lEPSJJX0tHX0NSX0RFVEVDVElPTk9GUEVSRk9SQVRJT04iIE1pcnRoOkNvbW1lbnQ9IkRl
+dGVjdGlvbiBvZiBwZXJmb3JhdGlvbiIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJl
+c3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURh
+dGEgSXRlbU9JRD0iSV9LR19DUl9FWFBMQU5BVElPTk9GUEVSRk9SQVRJT04iIE1pcnRoOkNvbW1l
+bnQ9IkV4cGxhbmF0aW9uIG9mIHBlcmZvcmF0aW9uIiBNaXJ0aDpEYXRhVHlwZT0idGV4dCIgTWly
+dGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJ
+dGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX1RVTU9VUlNQSUxMIiBNaXJ0aDpDb21tZW50PSJUdW1v
+dXIgc3BpbGwiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIg
+VmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9Iklf
+S0dfQ1JfTE9DQVRJT05UVU1PVVIiIE1pcnRoOkNvbW1lbnQ9IkxvY2F0aW9uIG9mIHR1bW91ciIg
+TWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0
+O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9UVU1P
+VVJTSVpFIiBNaXJ0aDpDb21tZW50PSJUdW1vdXIgc2l6ZSIgTWlydGg6RGF0YVR5cGU9ImZsb2F0
+IiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAg
+ICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfVFNUQUdFIiBNaXJ0aDpDb21tZW50PSJUIHN0
+YWdlIiBNaXJ0aDpEYXRhVHlwZT0iaW50ZWdlciIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVl
+PSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NS
+X05TVEFHRSIgTWlydGg6Q29tbWVudD0iTiBzdGFnZSIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIi
+IE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAg
+ICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9NU1RBR0UiIE1pcnRoOkNvbW1lbnQ9Ik0gc3Rh
+Z2UiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9
+IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1Jf
+U1RBR0UiIE1pcnRoOkNvbW1lbnQ9IlN0YWdlIiBNaXJ0aDpEYXRhVHlwZT0iaW50ZWdlciIgTWly
+dGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJ
+dGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX05VTUJFUkxZTVBITk9ERVNSRU1PVkVEIiBNaXJ0aDpD
+b21tZW50PSJOdW1iZXIgb2YgbHltcGggbm9kZXMgcmVtb3ZlZCIgTWlydGg6RGF0YVR5cGU9ImZs
+b2F0IiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAg
+ICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfTk9ERVBPU0lUSVZFIiBNaXJ0aDpDb21t
+ZW50PSJQb3NpdGl2ZSBseW1waG5vZGVzIiBNaXJ0aDpEYXRhVHlwZT0iaW50ZWdlciIgTWlydGg6
+UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVt
+RGF0YSBJdGVtT0lEPSJJX0tHX0NSX05VTUJFUkxZTVBITk9ERVNQT1NJVElWRSIgTWlydGg6Q29t
+bWVudD0iTnVtYmVyIG9mIHBvc2l0aXZlIGx5bXBoIG5vZGVzIiBNaXJ0aDpEYXRhVHlwZT0iZmxv
+YXQiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAg
+ICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9JU09MQVRFRFRVTU9VUkRFUE9TSVQiIE1p
+cnRoOkNvbW1lbnQ9Iklzb2xhdGVkIFR1bW91ciBEZXBvc2l0IiBNaXJ0aDpEYXRhVHlwZT0iaW50
+ZWdlciIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAg
+ICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX01VQ0lOT1VTIiBNaXJ0aDpDb21tZW50
+PSJNdWNpbm91cyIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0i
+IiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0i
+SV9LR19DUl9ESUZGRVJFTlRJQVRJT05HUkFERSIgTWlydGg6Q29tbWVudD0iRGlmZmVyZW50aWF0
+aW9uIGdyYWRlIiBNaXJ0aDpEYXRhVHlwZT0iaW50ZWdlciIgTWlydGg6UmVzcG9uc2VUeXBlPSIi
+IFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJ
+X0tHX0NSX1VMQ0VSQVRJT04iIE1pcnRoOkNvbW1lbnQ9IlVsY2VyYXRpb24iIE1pcnRoOkRhdGFU
+eXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsi
+Lz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfQU5HSU9JTlZBU0lPTiIg
+TWlydGg6Q29tbWVudD0iQW5naW8gaW52YXNpb24iIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBN
+aXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAg
+PEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfTUVUQVNUQVNJUyIgTWlydGg6Q29tbWVudD0iTWV0
+YXN0YXNpcyIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBW
+YWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9L
+R19DUl9NRVRBU1RBU0lTT1JHQU4iIE1pcnRoOkNvbW1lbnQ9Ik1ldGFzdGFzaXMgT3JnYW4iIE1p
+cnRoOkRhdGFUeXBlPSJ0ZXh0IiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxV
+RSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfQURKVVZFTlRU
+SEVSQVBZIiBNaXJ0aDpDb21tZW50PSJBZGp1dmVudCB0aGVyYXB5IiBNaXJ0aDpEYXRhVHlwZT0i
+dGV4dCIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAg
+ICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX0NIRU1PRElGRkVSRU5UIiBNaXJ0aDpD
+b21tZW50PSJDaGVtbyBkaWZmZXJlbnQiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpS
+ZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1E
+YXRhIEl0ZW1PSUQ9IklfS0dfQ1JfUkFESU9USEVSQVBZIiBNaXJ0aDpDb21tZW50PSJSYWRpb3Ro
+ZXJhcHkiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFs
+dWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0df
+Q1JfUkFESU9USEVSQVBZRE9TRSIgTWlydGg6Q29tbWVudD0iUmFkaW90aGVyYXB5IGRvc2UiIE1p
+cnRoOkRhdGFUeXBlPSJ0ZXh0IiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxV
+RSZndDsiLz4KICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfUkVBU09OTk9B
+REpVVkVOVFRIRVJBUFkiIE1pcnRoOkNvbW1lbnQ9IlJlYXNvbiBubyBhZGp1dmVudCB0aGVyYXB5
+IiBNaXJ0aDpEYXRhVHlwZT0idGV4dCIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7
+VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX1JFTEFQ
+U0UiIE1pcnRoOkNvbW1lbnQ9IlJlbGFwc2UiIE1pcnRoOkRhdGFUeXBlPSJpbnRlZ2VyIiBNaXJ0
+aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4KICAgICAgICAgICAgPEl0
+ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfREFURU9GUkVMQVBTRSIgTWlydGg6Q29tbWVudD0iRGF0
+ZSBvZiByZWxhcHNlIiBNaXJ0aDpEYXRhVHlwZT0iZGF0ZSIgTWlydGg6UmVzcG9uc2VUeXBlPSIi
+IFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJ
+X0tHX0NSX0xPQ0FMUkVMQVBTRSIgTWlydGg6Q29tbWVudD0iTG9jYWwgcmVsYXBzZSIgTWlydGg6
+RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVF
+Jmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9ESVNUQU5UUkVM
+QVBTRSIgTWlydGg6Q29tbWVudD0iRGlzdGFudCByZWxhcHNlIiBNaXJ0aDpEYXRhVHlwZT0iaW50
+ZWdlciIgTWlydGg6UmVzcG9uc2VUeXBlPSIiIFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAg
+ICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJX0tHX0NSX0RJU1RBTlRSRUxBUFNFT1JHQU4iIE1p
+cnRoOkNvbW1lbnQ9IkRpc3RhbnQgcmVsYXBzZSBvcmdhbiIgTWlydGg6RGF0YVR5cGU9InRleHQi
+IE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAg
+ICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9USEVSQVBZRk9SUkVMQVBTRSIgTWlydGg6Q29t
+bWVudD0iVGhlcmFweSBmb3IgcmVsYXBzZSIgTWlydGg6RGF0YVR5cGU9InRleHQiIE1pcnRoOlJl
+c3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURh
+dGEgSXRlbU9JRD0iSV9LR19DUl9SRU1BUktTMiIgTWlydGg6Q29tbWVudD0iUmVtYXJrcyIgTWly
+dGg6RGF0YVR5cGU9InRleHQiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVF
+Jmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9MQVNUREFURU9G
+Q09OVEFDVCIgTWlydGg6Q29tbWVudD0iTGFzdCBkYXRlIG9mIGNvbnRhY3QiIE1pcnRoOkRhdGFU
+eXBlPSJkYXRlIiBNaXJ0aDpSZXNwb25zZVR5cGU9IiIgVmFsdWU9IiZsdDtWQUxVRSZndDsiLz4K
+ICAgICAgICAgICAgPEl0ZW1EYXRhIEl0ZW1PSUQ9IklfS0dfQ1JfRk9MTE9XVVAiIE1pcnRoOkNv
+bW1lbnQ9IkZvbGxvdyB1cCIgTWlydGg6RGF0YVR5cGU9InRleHQiIE1pcnRoOlJlc3BvbnNlVHlw
+ZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9J
+RD0iSV9LR19DUl9ESVNFQVNFRlJFRUZPTExPV1VQIiBNaXJ0aDpDb21tZW50PSJEaXNlYXNlIGZy
+ZWUgZm9sbG93IHVwIiBNaXJ0aDpEYXRhVHlwZT0idGV4dCIgTWlydGg6UmVzcG9uc2VUeXBlPSIi
+IFZhbHVlPSImbHQ7VkFMVUUmZ3Q7Ii8+CiAgICAgICAgICAgIDxJdGVtRGF0YSBJdGVtT0lEPSJJ
+X0tHX0NSX0RFQ0VBU0VEIiBNaXJ0aDpDb21tZW50PSJEZWNlYXNlZCIgTWlydGg6RGF0YVR5cGU9
+ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgog
+ICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9TVEFUVVMiIE1pcnRoOkNvbW1l
+bnQ9IlN0YXR1cyIgTWlydGg6RGF0YVR5cGU9ImludGVnZXIiIE1pcnRoOlJlc3BvbnNlVHlwZT0i
+IiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0i
+SV9LR19DUl9SRU1BUktTMyIgTWlydGg6Q29tbWVudD0iUmVtYXJrcyIgTWlydGg6RGF0YVR5cGU9
+InRleHQiIE1pcnRoOlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAg
+ICAgICAgICA8SXRlbURhdGEgSXRlbU9JRD0iSV9LR19DUl9FWFRSQUlORk9STUFUSU9OIiBNaXJ0
+aDpDb21tZW50PSJFeHRyYSBpbmZvcm1hdGlvbiIgTWlydGg6RGF0YVR5cGU9InRleHQiIE1pcnRo
+OlJlc3BvbnNlVHlwZT0iIiBWYWx1ZT0iJmx0O1ZBTFVFJmd0OyIvPgogICAgICAgICAgPC9JdGVt
+R3JvdXBEYXRhPgogICAgICAgIDwvRm9ybURhdGE+CiAgICAgIDwvU3R1ZHlFdmVudERhdGE+CiAg
+ICA8L1N1YmplY3REYXRhPgogIDwvQ2xpbmljYWxEYXRhPgo8L09ETT4K</outboundTemplate>
+      <inboundProtocol>DELIMITED</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties>
+        <property name="batchGroupingColumn"></property>
+        <property name="batchMessageDelimiter"></property>
+        <property name="batchMessageDelimiterIncluded">false</property>
+        <property name="batchScript"></property>
+        <property name="batchSkipRecords">0</property>
+        <property name="batchSplitByRecord">true</property>
+        <property name="columnDelimiter">,</property>
+        <property name="columnNames">StudyNumber,Tnumber,Gender,DateOfBirth,ReferringHospital,Remarks1,DateOfSurgery,AgeAtSurgery,SurgeryPlan,IndicationAcute,Resection,Perforation,DateOfPerforation,DetectionOfPerforation,ExplanationOfPerforation,TumourSpill,LocationTumour,TumourSize,TStage,NStage,MStage,Stage,NumberLymphNodesRemoved,NodePositive,NumberLymphNodesPositive,IsolatedTumourDeposit,Mucinous,DifferentiationGrade,Ulceration,AngioInvasion,Metastasis,MetastasisOrgan,AdjuventTherapy,ChemoDifferent,RadioTherapy,RadioTherapyDose,ReasonNoAdjuventTherapy,Relapse,DateOfRelapse,LocalRelapse,DistantRelapse,DistantRelapseOrgan,TherapyForRelapse,Remarks2,LastDateOfContact,FollowUp,DiseaseFreeFollowUp,Deceased,Status,Remarks3,ExtraInformation</property>
+        <property name="columnWidths"></property>
+        <property name="escapeWithDoubleQuote">true</property>
+        <property name="ignoreCR">true</property>
+        <property name="numberedRows">false</property>
+        <property name="quoteChar">&quot;</property>
+        <property name="quoteEscapeChar">\</property>
+        <property name="recordDelimiter">
+</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="stripNamespaces">false</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>File Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.1.1.5490</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Setup batch</name>
+      <properties>
+        <property name="DataType">JavaScript Writer</property>
+        <property name="host">sink</property>
+        <property name="script">globalMap.get(&quot;OC Generic Importer&quot;).setupBatch($(&apos;originalFilename&apos;), &quot;https://appserv2.ctms/OpenClinica-ws/&quot;, &quot;arjan&quot;, &quot;momixco9027.&quot;);</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>JavaScript Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.1.1.5490</version>
+    </connector>
+    <connector>
+      <name>OCWriter</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">ccab1657-4dbe-4068-a076-68003ff9dd9f</property>
+        <property name="synchronised">1</property>
+        <property name="template">&lt;message&gt;&lt;batch&gt;${ORIGINALNAME}&lt;/batch&gt;${message.encodedData}&lt;/message&gt;
+</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.1.1.5490</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">14</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;
+</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>

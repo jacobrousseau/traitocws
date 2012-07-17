@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODM xmlns:Mirth="http://www.vumc.nl/trait/odm/mirth/v0.1" xmlns:OpenClinica="http://www.openclinica.org/ns/odm_ext_v130/v3.1" xmlns:cdisc="http://www.cdisc.org/ns/odm/v1.3">
+  <ClinicalData Mirth:TranslateOID="false" StudyOID="S_TEST001">
+    <SubjectData Mirth:TranslateOID="true" SubjectKey="D_TEST001KG_CRC_IIandIII_010">
+      <StudyEventData StudyEventOID="SE_SE_UPLOADTEST">
+        <FormData FormOID="F_KG_CRC_IIAND_V1">
+          <ItemGroupData ItemGroupOID="IG_KG_CR_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_KG_CR_STUDYNUMBER" Mirth:Comment="Study number" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TNUMBER" Mirth:Comment="T-number" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_GENDER" Mirth:Comment="Gender" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFBIRTH" Mirth:Comment="Date of birth" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REFERRINGHOSPITAL" Mirth:Comment="Referring hospital" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS1" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFSURGERY" Mirth:Comment="Date of surgery" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_AGEATSURGERY" Mirth:Comment="Age at date of first surgery" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_SURGERYPLAN" Mirth:Comment="Surgery plan" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_INDICATIONACUTE" Mirth:Comment="Indication acute" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RESECTION" Mirth:Comment="Resection" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_PERFORATION" Mirth:Comment="Perforation" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFPERFORATION" Mirth:Comment="Date of perforation" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DETECTIONOFPERFORATION" Mirth:Comment="Detection of perforation" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_EXPLANATIONOFPERFORATION" Mirth:Comment="Explanation of perforation" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TUMOURSPILL" Mirth:Comment="Tumour spill" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LOCATIONTUMOUR" Mirth:Comment="Location of tumour" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TUMOURSIZE" Mirth:Comment="Tumour size" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TSTAGE" Mirth:Comment="T stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NSTAGE" Mirth:Comment="N stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_MSTAGE" Mirth:Comment="M stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="2"/>
+            <ItemData ItemOID="I_KG_CR_STAGE" Mirth:Comment="Stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NUMBERLYMPHNODESREMOVED" Mirth:Comment="Number of lymph nodes removed" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NODEPOSITIVE" Mirth:Comment="Positive lymphnodes" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NUMBERLYMPHNODESPOSITIVE" Mirth:Comment="Number of positive lymph nodes" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ISOLATEDTUMOURDEPOSIT" Mirth:Comment="Isolated Tumour Deposit" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_MUCINOUS" Mirth:Comment="Mucinous" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DIFFERENTIATIONGRADE" Mirth:Comment="Differentiation grade" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ULCERATION" Mirth:Comment="Ulceration" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ANGIOINVASION" Mirth:Comment="Angio invasion" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_METASTASIS" Mirth:Comment="Metastasis" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_METASTASISORGAN" Mirth:Comment="Metastasis Organ" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ADJUVENTTHERAPY" Mirth:Comment="Adjuvent therapy" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_CHEMODIFFERENT" Mirth:Comment="Chemo different" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RADIOTHERAPY" Mirth:Comment="Radiotherapy" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RADIOTHERAPYDOSE" Mirth:Comment="Radiotherapy dose" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REASONNOADJUVENTTHERAPY" Mirth:Comment="Reason no adjuvent therapy" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RELAPSE" Mirth:Comment="Relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFRELAPSE" Mirth:Comment="Date of relapse" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LOCALRELAPSE" Mirth:Comment="Local relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISTANTRELAPSE" Mirth:Comment="Distant relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISTANTRELAPSEORGAN" Mirth:Comment="Distant relapse organ" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_THERAPYFORRELAPSE" Mirth:Comment="Therapy for relapse" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS2" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LASTDATEOFCONTACT" Mirth:Comment="Last date of contact" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_FOLLOWUP" Mirth:Comment="Follow up" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISEASEFREEFOLLOWUP" Mirth:Comment="Disease free follow up" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DECEASED" Mirth:Comment="Deceased" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_STATUS" Mirth:Comment="Status" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS3" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_EXTRAINFORMATION" Mirth:Comment="Extra information" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+      <StudyEventData StudyEventOID="SE_LALADIELADIELALA">
+        <FormData FormOID="F_ARJAN_ABP_DI_V10">
+          <ItemGroupData ItemGroupOID="IG_ARJAN_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_ARJAN_APD_DATE_PRIMARYDIAGNOSIS" Mirth:Comment="Date Primary Diagnosis" Mirth:DataType="partialDate" Mirth:ResponseType="text" Value="1"/>
+            <ItemData ItemOID="I_ARJAN_APD_TYPE_MALIGNANCY" Mirth:Comment="Type of malignancy" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC" Mirth:Comment="File met File box" Mirth:DataType="text" Mirth:ResponseType="file" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_ARJAN_APD_DATE_METASTATIC2" Mirth:Comment="File met text" Mirth:DataType="text" Mirth:ResponseType="text" Value="1"/>
+          </ItemGroupData>
+        </FormData>
+        <FormData FormOID="F_KG_CRC_IIAND_V1">
+          <ItemGroupData ItemGroupOID="IG_KG_CR_UNGROUPED" TransactionType="Insert">
+            <ItemData ItemOID="I_KG_CR_STUDYNUMBER" Mirth:Comment="Study number" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TNUMBER" Mirth:Comment="T-number" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_GENDER" Mirth:Comment="Gender" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFBIRTH" Mirth:Comment="Date of birth" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REFERRINGHOSPITAL" Mirth:Comment="Referring hospital" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS1" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFSURGERY" Mirth:Comment="Date of surgery" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_AGEATSURGERY" Mirth:Comment="Age at date of first surgery" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_SURGERYPLAN" Mirth:Comment="Surgery plan" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_INDICATIONACUTE" Mirth:Comment="Indication acute" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RESECTION" Mirth:Comment="Resection" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_PERFORATION" Mirth:Comment="Perforation" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFPERFORATION" Mirth:Comment="Date of perforation" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DETECTIONOFPERFORATION" Mirth:Comment="Detection of perforation" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_EXPLANATIONOFPERFORATION" Mirth:Comment="Explanation of perforation" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TUMOURSPILL" Mirth:Comment="Tumour spill" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LOCATIONTUMOUR" Mirth:Comment="Location of tumour" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TUMOURSIZE" Mirth:Comment="Tumour size" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_TSTAGE" Mirth:Comment="T stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NSTAGE" Mirth:Comment="N stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_MSTAGE" Mirth:Comment="M stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_STAGE" Mirth:Comment="Stage" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NUMBERLYMPHNODESREMOVED" Mirth:Comment="Number of lymph nodes removed" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NODEPOSITIVE" Mirth:Comment="Positive lymphnodes" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_NUMBERLYMPHNODESPOSITIVE" Mirth:Comment="Number of positive lymph nodes" Mirth:DataType="float" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ISOLATEDTUMOURDEPOSIT" Mirth:Comment="Isolated Tumour Deposit" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_MUCINOUS" Mirth:Comment="Mucinous" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DIFFERENTIATIONGRADE" Mirth:Comment="Differentiation grade" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="1"/>
+            <ItemData ItemOID="I_KG_CR_ULCERATION" Mirth:Comment="Ulceration" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ANGIOINVASION" Mirth:Comment="Angio invasion" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_METASTASIS" Mirth:Comment="Metastasis" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_METASTASISORGAN" Mirth:Comment="Metastasis Organ" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_ADJUVENTTHERAPY" Mirth:Comment="Adjuvent therapy" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_CHEMODIFFERENT" Mirth:Comment="Chemo different" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RADIOTHERAPY" Mirth:Comment="Radiotherapy" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RADIOTHERAPYDOSE" Mirth:Comment="Radiotherapy dose" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REASONNOADJUVENTTHERAPY" Mirth:Comment="Reason no adjuvent therapy" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_RELAPSE" Mirth:Comment="Relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DATEOFRELAPSE" Mirth:Comment="Date of relapse" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LOCALRELAPSE" Mirth:Comment="Local relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISTANTRELAPSE" Mirth:Comment="Distant relapse" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISTANTRELAPSEORGAN" Mirth:Comment="Distant relapse organ" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_THERAPYFORRELAPSE" Mirth:Comment="Therapy for relapse" Mirth:DataType="text" Mirth:ResponseType="multi-select" Value="2"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS2" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_LASTDATEOFCONTACT" Mirth:Comment="Last date of contact" Mirth:DataType="date" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_FOLLOWUP" Mirth:Comment="Follow up" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DISEASEFREEFOLLOWUP" Mirth:Comment="Disease free follow up" Mirth:DataType="text" Mirth:ResponseType="text" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_DECEASED" Mirth:Comment="Deceased" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_STATUS" Mirth:Comment="Status" Mirth:DataType="integer" Mirth:ResponseType="single-select" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_REMARKS3" Mirth:Comment="Remarks" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+            <ItemData ItemOID="I_KG_CR_EXTRAINFORMATION" Mirth:Comment="Extra information" Mirth:DataType="text" Mirth:ResponseType="textarea" Value="&lt;VALUE&gt;"/>
+          </ItemGroupData>
+        </FormData>
+      </StudyEventData>
+    </SubjectData>
+  </ClinicalData>
+</ODM>
+
