@@ -44,7 +44,7 @@ import nl.vumc.trait.oc.ws.StudyWsService;
  * Supports "low-level" interaction with OpenClinica web services such
  * as exception handling, credentials and soap handler setup.
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class OCConnector {
 

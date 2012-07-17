@@ -26,7 +26,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Connection credentials and URL. Also facilitates the hashing of the
  * password. Clear-text password is not saved and cannot be retrieved.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ConnectInfo {
 

@@ -29,7 +29,7 @@ import nl.vumc.trait.oc.util.Logger;
 
 /**
  * A quick and dirty logging handler of SOAP messages.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class LoggingHandler implements SOAPHandler<SOAPMessageContext> {
 	

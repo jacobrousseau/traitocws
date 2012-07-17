@@ -20,7 +20,7 @@ package nl.vumc.trait.oc.connect;
 
 /**
  * General connector exception.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class OCConnectorException extends Exception {
 	

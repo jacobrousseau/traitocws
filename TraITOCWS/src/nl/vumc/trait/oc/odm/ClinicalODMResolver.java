@@ -38,7 +38,7 @@ import org.w3c.dom.NodeList;
 /**
  * Clinical ODM with functionality to resolve non-OID ids from OpenClinica IDs
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  * 
  */
 public class ClinicalODMResolver extends ClinicalODM {

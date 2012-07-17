@@ -41,7 +41,7 @@ import org.w3c.dom.NodeList;
  * wrong namespace by OpenClinica 3.1.2-community. See issue report 13333
  * (https://issuetracker.openclinica.com/view.php?id=13333).
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class EventDefListAllHandler implements SOAPHandler<SOAPMessageContext> {
 

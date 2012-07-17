@@ -30,7 +30,7 @@ import org.openclinica.ws.beans.StudySubjectWithEventsType;
 
 /**
  * Simple representation of a Study Subject
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class StudySubject {
 

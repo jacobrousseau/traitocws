@@ -42,7 +42,7 @@ import nl.vumc.trait.oc.util.Logger;
 /**
  * Skeleton for any program contained within this package. It provides and initializes
  * basic support data structures for xml handling and command line parsing. 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public abstract class Main {
 	/** Document Builder Factory, used as a namespace aware document builder factory. */

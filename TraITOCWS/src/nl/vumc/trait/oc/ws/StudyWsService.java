@@ -29,7 +29,7 @@ import org.openclinica.ws.study.v1.WsService;
 /**
  * Use this as a shortcut to set some default values for this web service.
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class StudyWsService extends WsService {
 

@@ -28,7 +28,7 @@ import javax.xml.namespace.NamespaceContext;
 /**
  * Namespace context for XPath queries on OpenClinica related XML
  * 
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  * 
  */
 public class NSContext implements NamespaceContext {

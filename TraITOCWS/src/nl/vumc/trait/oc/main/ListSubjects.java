@@ -31,7 +31,7 @@ import org.openclinica.ws.studysubject.v1.ListAllByStudyResponse;
 
 /**
  * List subjects for a given study.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ListSubjects extends Main {
 

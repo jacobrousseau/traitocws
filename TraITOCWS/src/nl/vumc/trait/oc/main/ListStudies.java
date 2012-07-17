@@ -35,7 +35,7 @@ import org.openclinica.ws.study.v1.ListAllResponse;
 
 /**
  * List all studies.
- * @author Arjan van der Velde (ag.vandervelde@vumc.nl)
+ * @author Arjan van der Velde (a.vandervelde (at) xs4all.nl)
  */
 public class ListStudies extends Main {
 
