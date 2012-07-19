@@ -13,3 +13,4 @@ org.openclinica.ws.event.v1
 org.openclinica.ws.study.v1
 org.openclinica.ws.studyeventdefinition.v1
 org.openclinica.ws.studysubject.v1
+org.openclinica.ws.wsdl
