@@ -43,8 +43,22 @@ import org.xml.sax.SAXException;
  */
 public class ImportODM extends Main {
 
+	private final static int DEFAULT_EXPIRE = 60;
+
+	private class ResolverCache {
+		public long timestamp;
+		public ClinicalODMResolver resolver;
+		public ResolverCache(ClinicalODMResolver resolver, int expire) {
+			timestamp = System.currentTimeMillis();
+			this.resolver = resolver;
+		}
+		public boolean isExpired() {
+			return (System.currentTimeMillis() - timestamp) > (DEFAULT_EXPIRE * 1000);
+		}
+	}
+
 	/** Per batch clinical resolver */
-	private HashMap<String, ClinicalODMResolver> resolvers; // <batch, resolver>
+	private HashMap<String, ResolverCache> resolvers; // <batch, resolver>
 
 	/**
 	 * Initiliaze importer
@@ -52,7 +66,7 @@ public class ImportODM extends Main {
 	 */
 	public ImportODM() throws ParserConfigurationException {
 		super();
-		resolvers = new HashMap<String, ClinicalODMResolver>();
+		resolvers = new HashMap<String, ResolverCache>();
 		logger.debug("ImportODM Instantiated...");
 	}
 	
@@ -60,7 +74,7 @@ public class ImportODM extends Main {
 	 * Clear all batches (resolvers)
 	 */
 	public void clearCache() {
-		resolvers = new HashMap<String, ClinicalODMResolver>();
+		resolvers = new HashMap<String, ResolverCache>();
 	}
 
 	/**
@@ -72,18 +86,31 @@ public class ImportODM extends Main {
 	 * @throws OCConnectorException
 	 */
 	public void setupBatch(String batch, String baseURL, String user, String password) throws OCConnectorException {
+		setupBatch(batch, baseURL, user, password, DEFAULT_EXPIRE);
+	}
+	
+	/**
+	 * Initialize a batch -- setup resolver using connect info supplied.
+	 * @param batch batch name
+	 * @param baseURL OpenClinica web services URL
+	 * @param user OpenClinica user name
+	 * @param password OpenClinca password
+	 * @param expire time to expire cached resolver
+	 * @throws OCConnectorException
+	 */
+	public void setupBatch(String batch, String baseURL, String user, String password, int expire) throws OCConnectorException {
 		logger.debug("setupBatch(): batch: " + batch);
 		ConnectInfo connectInfo = new ConnectInfo(baseURL, user);
 		connectInfo.setPassword(password);
-		if (!resolvers.containsKey(batch)) {
+		if (!resolvers.containsKey(batch) && !resolvers.get(batch).isExpired()) {
 			try {
 				OCWebServices connector = OCWebServices.getInstance(connectInfo, debug, false);
-				resolvers.put(batch, new ClinicalODMResolver(connector));
+				resolvers.put(batch, new ResolverCache(new ClinicalODMResolver(connector), expire));
 			} catch (Exception e) {
 				throw new OCConnectorException("Cannot setup ImportODM", e);
 			}
 		} else {
-			resolvers.get(batch).getConnector().setCredentials(connectInfo);
+			resolvers.get(batch).resolver.getConnector().setCredentials(connectInfo);
 		}
 	}
 
@@ -106,7 +133,7 @@ public class ImportODM extends Main {
 		ClinicalODMResolver resolver;
 		logger.debug("ImportODM.process(): batch: " + batch);
 		if (resolvers.containsKey(batch)) {
-			resolver = resolvers.get(batch);
+			resolver = resolvers.get(batch).resolver;
 		} else {
 			logger.debug("ImportODM.process(): batches: " + resolvers.keySet());
 			throw new OCConnectorException("No resolver for batch '" + batch + "'!");
