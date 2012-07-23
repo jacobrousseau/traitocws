@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "wsService", targetNamespace = "http://openclinica.org/ws/studyEventDefinition/v1", wsdlLocation = "file:/C:/Documents%20and%20Settings/ag.vandervelde/Bureaublad/newgen/studyEventDefinitionWsdl.wsdl")
+@WebServiceClient(name = "wsService", targetNamespace = "http://openclinica.org/ws/studyEventDefinition/v1", wsdlLocation = "file://tmp/studyEventDefinitionWsdl.wsdl")
 @SuppressWarnings("javadoc")
 public class WsService
     extends Service
@@ -31,9 +31,9 @@ public class WsService
         try {
             URL baseUrl;
             baseUrl = org.openclinica.ws.studyeventdefinition.v1.WsService.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/Documents%20and%20Settings/ag.vandervelde/Bureaublad/newgen/studyEventDefinitionWsdl.wsdl");
+            url = new URL(baseUrl, "file://tmp/studyEventDefinitionWsdl.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Documents%20and%20Settings/ag.vandervelde/Bureaublad/newgen/studyEventDefinitionWsdl.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file://tmp/studyEventDefinitionWsdl.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         WSSERVICE_WSDL_LOCATION = url;

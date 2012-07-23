@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "wsService", targetNamespace = "http://openclinica.org/ws/study/v1", wsdlLocation = "file:/C:/Documents%20and%20Settings/ag.vandervelde/workspace/OpenClinicaWS/src/org/openclinica/ws/study/v1/studyWsdl.wsdl")
+@WebServiceClient(name = "wsService", targetNamespace = "http://openclinica.org/ws/study/v1", wsdlLocation = "file://tmp/studyWsdl.wsdl")
 @SuppressWarnings("javadoc")
 public class WsService
     extends Service
@@ -31,9 +31,9 @@ public class WsService
         try {
             URL baseUrl;
             baseUrl = org.openclinica.ws.study.v1.WsService.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/Documents%20and%20Settings/ag.vandervelde/workspace/OpenClinicaWS/src/org/openclinica/ws/study/v1/studyWsdl.wsdl");
+            url = new URL(baseUrl, "file://tmp/studyWsdl.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Documents%20and%20Settings/ag.vandervelde/workspace/OpenClinicaWS/src/org/openclinica/ws/study/v1/studyWsdl.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file://tmp/studyWsdl.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         WSSERVICE_WSDL_LOCATION = url;
