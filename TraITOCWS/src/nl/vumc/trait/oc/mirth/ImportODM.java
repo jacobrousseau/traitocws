@@ -49,11 +49,14 @@ public class ImportODM extends Main {
 		public long timestamp;
 		public ClinicalODMResolver resolver;
 		public ResolverCache(ClinicalODMResolver resolver, int expire) {
-			timestamp = System.currentTimeMillis();
+			updateTimeStamp();
 			this.resolver = resolver;
 		}
 		public boolean isExpired() {
 			return (System.currentTimeMillis() - timestamp) > (DEFAULT_EXPIRE * 1000);
+		}
+		public void updateTimeStamp() {
+			timestamp = System.currentTimeMillis();
 		}
 	}
 
@@ -102,7 +105,7 @@ public class ImportODM extends Main {
 		logger.debug("setupBatch(): batch: " + batch);
 		ConnectInfo connectInfo = new ConnectInfo(baseURL, user);
 		connectInfo.setPassword(password);
-		if (!resolvers.containsKey(batch) && !resolvers.get(batch).isExpired()) {
+		if (!resolvers.containsKey(batch) || resolvers.get(batch).isExpired()) {
 			try {
 				OCWebServices connector = OCWebServices.getInstance(connectInfo, debug, false);
 				resolvers.put(batch, new ResolverCache(new ClinicalODMResolver(connector), expire));
@@ -110,6 +113,7 @@ public class ImportODM extends Main {
 				throw new OCConnectorException("Cannot setup ImportODM", e);
 			}
 		} else {
+			resolvers.get(batch).updateTimeStamp();
 			resolvers.get(batch).resolver.getConnector().setCredentials(connectInfo);
 		}
 	}

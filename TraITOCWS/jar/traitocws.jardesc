@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="OpenClinicaWS/jar/traitocws.jar"/>
-    <options buildIfNeeded="true" compress="true" descriptionLocation="/OpenClinicaWS/jar/traitocws.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="false" storeRefactorings="false" useSourceFolders="false"/>
+    <jar path="TraITOCWS/jar/traitocws.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/TraITOCWS/jar/traitocws.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
-    <manifest generateManifest="false" manifestLocation="/OpenClinicaWS/jar/manifest.mf" manifestVersion="1.0" reuseManifest="false" saveManifest="true" usesManifest="true">
+    <manifest generateManifest="false" manifestLocation="/TraITOCWS/jar/manifest.mf" manifestVersion="1.0" reuseManifest="false" saveManifest="true" usesManifest="true">
         <sealing sealJar="false">
             <packagesToSeal/>
             <packagesToUnSeal/>
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
-        <javaElement handleIdentifier="=OpenClinicaWS/src"/>
+        <javaElement handleIdentifier="=TraITOCWS/src"/>
     </selectedElements>
 </jardesc>
